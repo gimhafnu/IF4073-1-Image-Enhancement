@@ -10,7 +10,6 @@ show_img_hist(I);
 show_img_hist(I_new);
 
 function show_img_hist(image_matrix)
-    figure,imshow(image_matrix);
     if size(image_matrix,3) == 3
         R=myimhist(image_matrix(:,:,1)).YData;
         G=myimhist(image_matrix(:,:,2)).YData;
@@ -21,9 +20,10 @@ function show_img_hist(image_matrix)
 
         figure, plot(R,'r')
         hold on, plot(G,'g')
-        plot(B,'b'), legend('Red channel','Green channel','Blue channel'),
-        hold off;
+        plot(B,'b'), legend(' Red channel','Green channel','Blue channel');
+        hold off,
     else
         figure,myimhist(image_matrix).YData;
     end
+    figure,imshow(image_matrix);
 end
