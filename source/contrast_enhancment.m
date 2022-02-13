@@ -1,4 +1,4 @@
-function neo_Img = contrast_expand(I)
+function neo_Img = contrast_enhancment(I)
     I_new = zeros(size(I),'uint8');
     for i=1:size(I,3)
         I_temp = I(:,:,i);

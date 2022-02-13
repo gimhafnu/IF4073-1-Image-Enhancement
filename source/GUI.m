@@ -22,7 +22,7 @@ function varargout = GUI(varargin)
 
 % Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 13-Feb-2022 22:57:25
+% Last Modified by GUIDE v2.5 14-Feb-2022 00:03:08
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -165,14 +165,22 @@ function contrast_enhancment_Callback(hObject, eventdata, handles)
 % hObject    handle to contrast_enhancment (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+image = getappdata(0, 'image1');
+image = contrast_enhancment(image);
+axes(handles.axes5);
+imshow(image);
+setappdata(0, 'image3', image);
 
 % --- Executes on button press in histogram_equalization.
 function histogram_equalization_Callback(hObject, eventdata, handles)
 % hObject    handle to histogram_equalization (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+image = getappdata(0, 'image1');
+image = histogram_eq(image);
+axes(handles.axes5);
+imshow(image);
+setappdata(0, 'image3', image);
 
 % --- Executes on button press in histogram_specification.
 function histogram_specification_Callback(hObject, eventdata, handles)

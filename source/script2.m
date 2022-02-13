@@ -1,7 +1,7 @@
 clear all;
 clc;
 
-I = imread("2-1.jpg");  
+I = imread("../Image/2-1.jpg");  
 disp(size(I,3));
 
 I_new = contrast_expand(I);
@@ -9,7 +9,7 @@ I_new = contrast_expand(I);
 show_img_hist(I);
 show_img_hist(I_new);
 
-function show_img_hist(image_matrix)
+function contrast_exp(image_matrix)
     figure,imshow(image_matrix);
     if size(image_matrix,3) == 3
         R=myimhist(image_matrix(:,:,1)).YData;
