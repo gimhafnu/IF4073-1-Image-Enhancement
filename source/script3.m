@@ -1,6 +1,6 @@
 clear all;
 clc;
-I = imread("3-1.jpg");
+I = imread("../image/3-4.jpg");
 
 I_new = histogram_eq(I);
 
